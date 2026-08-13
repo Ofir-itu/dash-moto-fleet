@@ -28,7 +28,10 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Build web project
-        run: npx vite build
+        run: |
+          npx vite build
+          mkdir -p output/assets
+          if [ -d "dist" ]; then cp -r dist/* output/assets/; fi
 
       - name: Add & Sync Android Platform
         run: |
