@@ -29,11 +29,9 @@ jobs:
 
       - name: Build web project
         run: |
-          npx vite build
-          mkdir -p .output/public
-          mkdir -p output/assets
-          cp -r dist/* .output/public/ || true
-          cp -r dist/* output/assets/ || true
+          npm run build
+          mkdir -p dist
+          if [ -d ".output/public" ]; then cp -r .output/public/* dist/; fi
 
       - name: Add & Sync Android Platform
         run: |
