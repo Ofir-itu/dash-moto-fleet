@@ -29,10 +29,11 @@ jobs:
 
       - name: Build web project
         run: |
-          mkdir -p output/assets
-          rm -rf dist
-          ln -s output/assets dist
           npx vite build
+          mkdir -p .output/public
+          mkdir -p output/assets
+          cp -r dist/* .output/public/ || true
+          cp -r dist/* output/assets/ || true
 
       - name: Add & Sync Android Platform
         run: |
