@@ -1,7 +1,7 @@
 {
   "appId": "app.lovable.dashmoto",
   "appName": "Ituran Moto",
-  "webDir": ".output/public",
+ "webDir": "dist",
   "android": {
     "allowMixedContent": true
   },
