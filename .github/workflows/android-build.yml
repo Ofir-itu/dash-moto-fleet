@@ -29,9 +29,9 @@ jobs:
 
       - name: Build web project
         run: |
-          npx vite build
+          npx vite build --outDir dist
           mkdir -p output/assets
-          if [ -d "dist" ]; then cp -r dist/* output/assets/; fi
+          cp -r dist/* output/assets/
 
       - name: Add & Sync Android Platform
         run: |
